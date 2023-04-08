@@ -63,45 +63,29 @@ if (title && text){
 });
 
 route.delete('/notes/:id',(req,res) => {
-    
-   
-
     const requestedId= req.params.id;
-    for (i=0; i< noteData.length; i++ ){
-        if (noteData[i].notes_id === requestedId){
-            const {title, text, id}= req.body
-            const deleteNote= {
-                title,
-                text,
-                id
-            }
-            fs.readFile('./db/db.json','utf8', (err, data)=>{
-                if (err){
-                    console.error(err);
-                }
-                else{
-                    const parsedData= JSON.parse(data)
-                    parsedData.pop(deleteNote)
-                    fs.writeFile('./db/db.json',JSON.stringify(parsedData, null, 4),writeErr => {
-                        writeErr? console.error(writeErr):console.log ('note has been deleted');
-                    })
-                }
-
-            })
-        const response= {
-            message: "success",
-            body: deleteNote
-        }
-        console.log(response)
-    res.status(201).json(response)
-
-    }else{
-        res.status(500).json('error in posting review');
+    fs.readFile('./db/db.json','utf8', (err, data)=>{
+        if (err){
+            console.log('error reading file');
+        } else{
+            const parsedData= JSON.parse(data)
+            const delNoteIndex= parsedData.findIndex((note) => note.id == requestedId);
+                parsedData.splice(delNoteIndex,1);
+                fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 5), (writeErr) => {
+                if (writeErr) {
+                console.log("error writing file")
+                 } else{ 
+                     console.log("note has been deleted");
+                     res.send()
+                 }
+        });
+       
     }
-
-    }
-
-    
 })
+
+
+    });
+
+
     
 module.exports= route
