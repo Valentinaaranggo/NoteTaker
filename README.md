@@ -9,10 +9,12 @@
   ## Table of Contents
   * [License](#license)
   * [Installation](#installation)
-  * [Usage](#usage)
+  * [Images](#images)
+  * [Link](#Link to Deployed Application)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
+  
   
   # License
   * Read more about MIT here: [License Link](https://opensource.org/licenses/MIT) 
@@ -24,7 +26,14 @@
  ```
  To install all dependencies required, use 'npm i' in the CLI
  ```
-
+  ## Images
+  ![Screenshot](https://github.com/Valentinaaranggo/NoteTaker/blob/main/Assets/Screenshot%202023-04-08%20223225.png)
+  ![Screenshot](https://github.com/Valentinaaranggo/NoteTaker/blob/main/Assets/Screenshot%202023-04-08%20223337.png)
+  
+  ## Link to Deployed Application
+  https://note-taker28.herokuapp.com/
+  
+  
   ## Contributing
   
   Fork down the repository and clone it to your local machine. Once you have cloned it down you can make or add changes and submit a pull request for those changes.
