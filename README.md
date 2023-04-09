@@ -33,9 +33,6 @@
 
   Tests were run using insomnia
 
- ```
- npm test
- ```
   ## Questions
   
   If you have any questions about the repo, open an issue or contact me directly at valea28@gmail.com.
