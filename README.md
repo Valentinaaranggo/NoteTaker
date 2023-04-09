@@ -10,7 +10,7 @@
   * [License](#license)
   * [Installation](#installation)
   * [Images](#images)
-  * [Link](#Link to Deployed Application)
+  * [Link](#link)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
@@ -30,7 +30,7 @@
   ![Screenshot](https://github.com/Valentinaaranggo/NoteTaker/blob/main/Assets/Screenshot%202023-04-08%20223225.png)
   ![Screenshot](https://github.com/Valentinaaranggo/NoteTaker/blob/main/Assets/Screenshot%202023-04-08%20223337.png)
   
-  ## Link to Deployed Application
+  ## Link 
   https://note-taker28.herokuapp.com/
   
   
