@@ -56,28 +56,31 @@ const newNote= {
  
 //delete request to delete a note
 route.delete('/notes/:id',(req,res) => {
-    const requestedId=req.params.id
-   for (var i=0; i< noteData.length; i++){
-    var note=noteData[i];
-    
-    if (note.id=== requestedId){
-        noteData.splice(i,1);
-        fs.writeFile('./db/db.json', JSON.stringify(noteData, null, 5) , err => {
-            if (err){
-             console.log(err)
-             }else{
-                console.log("object deleted");
+    const requestedId = req.params.id;
+    let noteData;
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err){
+            console.log(err);
+        } else{
+            noteData = JSON.parse(data);
+            const delNoteIndex = noteData.findIndex(note => note.id == requestedId);
+            if (delNoteIndex !== -1){
+                noteData.splice(delNoteIndex, 1);
+                fs.writeFile('./db/db.json', JSON.stringify(noteData, null, 4), (writeErr) => {
+                    if (writeErr) {
+                        console.log(writeErr);
+                    } else {
+                        console.log("Note has been deleted");
+                        res.send();
+                    }
+                });
+            } else {
+                console.log(`Note with id ${requestedId} not found`);
                 res.send();
-             } 
-            
-        });
-    }
-   }
-           
-    
-       
+            }
+        }
     });
-
+});
 
 
     
